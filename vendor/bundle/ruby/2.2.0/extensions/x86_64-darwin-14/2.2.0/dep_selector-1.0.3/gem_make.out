@@ -1,0 +1,42 @@
+/usr/local/opt/ruby/bin/ruby -r ./siteconf20150929-17451-1bgxy3t.rb extconf.rb
+checking for main() in -lgecodesupport... yes
+checking for main() in -lgecodesupport... yes
+checking for main() in -lgecodekernel... yes
+checking for main() in -lgecodeint... yes
+checking for main() in -lgecodeminimodel... yes
+checking for main() in -lgecodesearch... yes
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling define_dummy_init.cxx
+compiling dep_selector_to_gecode.cpp
+In file included from dep_selector_to_gecode.cpp:20:
+In file included from /Users/emosei/work/chef/vendor/bundle/ruby/2.2.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/include/gecode/driver.hh:41:
+In file included from /Users/emosei/work/chef/vendor/bundle/ruby/2.2.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/include/gecode/minimodel.hh:45:
+In file included from /Users/emosei/work/chef/vendor/bundle/ruby/2.2.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/include/gecode/kernel.hh:160:
+/Users/emosei/work/chef/vendor/bundle/ruby/2.2.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/include/gecode/kernel/array.hpp:1077:5: warning: 'operator new' should not return a null pointer unless it is declared 'throw()' [-Wnew-returns-null]
+    return NULL;
+    ^
+/Users/emosei/work/chef/vendor/bundle/ruby/2.2.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/include/gecode/kernel/array.hpp:1558:5: warning: 'operator new' should not return a null pointer unless it is declared 'throw()' [-Wnew-returns-null]
+    return NULL;
+    ^
+2 warnings generated.
+compiling dep_selector_to_gecode_interface.cpp
+In file included from dep_selector_to_gecode_interface.cpp:23:
+In file included from ./dep_selector_to_gecode.h:28:
+In file included from /Users/emosei/work/chef/vendor/bundle/ruby/2.2.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/include/gecode/driver.hh:41:
+In file included from /Users/emosei/work/chef/vendor/bundle/ruby/2.2.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/include/gecode/minimodel.hh:45:
+In file included from /Users/emosei/work/chef/vendor/bundle/ruby/2.2.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/include/gecode/kernel.hh:160:
+/Users/emosei/work/chef/vendor/bundle/ruby/2.2.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/include/gecode/kernel/array.hpp:1077:5: warning: 'operator new' should not return a null pointer unless it is declared 'throw()' [-Wnew-returns-null]
+    return NULL;
+    ^
+/Users/emosei/work/chef/vendor/bundle/ruby/2.2.0/gems/dep-selector-libgecode-1.0.2/lib/dep-selector-libgecode/vendored-gecode/include/gecode/kernel/array.hpp:1558:5: warning: 'operator new' should not return a null pointer unless it is declared 'throw()' [-Wnew-returns-null]
+    return NULL;
+    ^
+2 warnings generated.
+linking shared-object dep_gecode.bundle
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 dep_gecode.bundle ./.gem.20150929-17451-11ltfyp

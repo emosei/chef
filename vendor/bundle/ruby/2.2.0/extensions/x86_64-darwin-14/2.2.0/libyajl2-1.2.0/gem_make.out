@@ -1,0 +1,15 @@
+/usr/local/opt/ruby/bin/ruby -r ./siteconf20150929-17451-1ta9wvy.rb extconf.rb
+creating Makefile
+/Users/emosei/work/chef/vendor/bundle/ruby/2.2.0/gems/libyajl2-1.2.0/ext/libyajl2
+
+make "DESTDIR=" clean
+make: *** No rule to make target `clean'.  Stop.
+
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+make "DESTDIR=" install
+mkdir -p /Users/emosei/work/chef/vendor/bundle/ruby/2.2.0/gems/libyajl2-1.2.0/lib/libyajl2/vendored-libyajl2/lib
+cp libyajl.bundle /Users/emosei/work/chef/vendor/bundle/ruby/2.2.0/gems/libyajl2-1.2.0/lib/libyajl2/vendored-libyajl2/lib/libyajl.bundle
+mkdir -p /Users/emosei/work/chef/vendor/bundle/ruby/2.2.0/gems/libyajl2-1.2.0/lib/libyajl2/vendored-libyajl2/include/yajl
+cp yajl/*.h /Users/emosei/work/chef/vendor/bundle/ruby/2.2.0/gems/libyajl2-1.2.0/lib/libyajl2/vendored-libyajl2/include/yajl

@@ -1,0 +1,21 @@
+/usr/local/opt/ruby/bin/ruby -r ./siteconf20150929-17451-1dk14b.rb extconf.rb
+-I/Users/emosei/work/chef/vendor/bundle/ruby/2.2.0/gems/libyajl2-1.2.0/lib/libyajl2/vendored-libyajl2/include $(cflags)  -fno-common -pipe
+-L/Users/emosei/work/chef/vendor/bundle/ruby/2.2.0/gems/libyajl2-1.2.0/lib/libyajl2/vendored-libyajl2/lib -L. -fstack-protector -L/usr/local/opt/libyaml/lib -L/usr/local/opt/openssl/lib -L/usr/local/opt/readline/lib 
+checking for yajl/yajl_tree.h... yes
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling parser.c
+parser.c:184:42: warning: passing 'const char [15]' to parameter of type 'char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+  ctx.symbolizeKeys = get_opts_key(self, "symbolize_keys");
+                                         ^~~~~~~~~~~~~~~~
+parser.c:166:36: note: passing argument to parameter 'key' here
+int get_opts_key(VALUE self, char *key) {
+                                   ^
+1 warning generated.
+linking shared-object ffi_yajl/ext/parser.bundle
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 parser.bundle ./.gem.20150929-17451-1xi2hwl/ffi_yajl/ext

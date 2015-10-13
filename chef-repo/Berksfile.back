@@ -1,0 +1,13 @@
+source "https://api.berkshelf.com"
+ 
+cookbook 'git'
+cookbook 'build-essential'
+cookbook 'redis'
+cookbook 'nodejs'
+cookbook 'xml'
+cookbook 'ruby_build'
+cookbook 'rbenv', :git => 'https://github.com/chef-rbenv/chef-rbenv.git'
+cookbook 'nginx'
+cookbook 'imagemagick'
+cookbook 'mysql', "~> 5.3.6"
+

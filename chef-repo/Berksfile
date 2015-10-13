@@ -1,0 +1,14 @@
+source "https://supermarket.chef.io"
+
+cookbook 'selinux'
+cookbook 'sudo'
+cookbook 'git'
+cookbook 'ruby_build'
+cookbook 'ruby-env', path: './cookbooks/ruby-env'
+cookbook 'nodejs'
+cookbook 'nginx'
+cookbook 'postgresql'
+cookbook 'redis'
+cookbook 'imagemagick'
+cookbook 'td-agent'
+
