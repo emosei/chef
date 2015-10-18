@@ -19,6 +19,6 @@
     "recipe[nodejs]",
     "recipe[ruby-env]",
     "recipe[postgresql]",
-    "recipe[imagemagick]"
+    "recipe[imagemagick]",
   ]
 }

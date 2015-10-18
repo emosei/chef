@@ -1,0 +1,2 @@
+cookbookの作成
+bundle exec knife cookbook create [cookbook名] -o cookbooks

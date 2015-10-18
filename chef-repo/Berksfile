@@ -11,4 +11,4 @@ cookbook 'postgresql'
 cookbook 'redis'
 cookbook 'imagemagick'
 cookbook 'td-agent'
-
+cookbook 'iptables'
