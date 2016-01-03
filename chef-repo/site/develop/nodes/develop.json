@@ -4,6 +4,7 @@
     "role[base]",
     "role[web]",
     "role[db]",
-    "role[cache]"
+    "role[cache]",
+    "role[app]"
   ]
 }

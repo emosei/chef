@@ -2,6 +2,7 @@ DEPENDENCIES
   git
   imagemagick
   iptables
+  mysql
   nginx
   nodejs
   postgresql
@@ -37,6 +38,9 @@ GRAPH
   install_from (3.0.4)
   iptables (1.1.0)
   metachef (3.0.4)
+  mysql (6.1.2)
+    smf (>= 0.0.0)
+    yum-mysql-community (>= 0.0.0)
   nginx (2.7.6)
     apt (~> 2.2)
     bluepill (~> 2.3)
@@ -58,6 +62,7 @@ GRAPH
     apt (>= 1.9.0)
     build-essential (>= 0.0.0)
     openssl (~> 4.0.0)
+  rbac (1.0.3)
   redis (3.0.4)
     install_from (>= 0.0.0)
     metachef (>= 0.0.0)
@@ -68,6 +73,8 @@ GRAPH
   runit (1.7.2)
     packagecloud (>= 0.0.0)
   selinux (0.9.0)
+  smf (2.2.7)
+    rbac (>= 1.0.1)
   sudo (2.7.2)
   td-agent (2.1.1)
     apt (>= 0.0.0)
@@ -77,3 +84,5 @@ GRAPH
   yum (3.7.1)
   yum-epel (0.6.3)
     yum (~> 3.2)
+  yum-mysql-community (0.1.18)
+    yum (>= 3.0)

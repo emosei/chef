@@ -1,2 +1,7 @@
-cookbookの作成
+・各フォルダの説明
+berks-cookbooks -- Berksfileに記述されたcookbookを格納
+cookbooks -- 自作cookbookを格納
+site -- 各サイト独自のchef関連を格納
+
+・cookbookの作成
 bundle exec knife cookbook create [cookbook名] -o cookbooks

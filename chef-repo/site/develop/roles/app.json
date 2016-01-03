@@ -1,11 +1,8 @@
 {
-  "name": "web",
+  "name": "app",
   "chef_type": "role",
   "json_class": "Chef::Role",
   "default_attributes": {
-    "nginx": {
-      "env": ["ruby"]
-    },
     "ruby-env": {
       "version": "2.2.2",
       "rbenv_url":      "https://github.com/sstephenson/rbenv",
@@ -14,8 +11,6 @@
   },
   "run_list": [
     "recipe[yum-epel]",
-    "recipe[nginx]",
-    "recipe[nginx-conf::unicorn]",
     "recipe[nodejs]",
     "recipe[ruby-env]",
     "recipe[imagemagick]"
