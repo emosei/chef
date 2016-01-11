@@ -1,0 +1,3 @@
+export RBENV_ROOT=<%= ::File.join('/home', node['user'], '.rbenv') %>
+export PATH="$RBENV_ROOT/bin:$PATH"
+eval "$(rbenv init -)"

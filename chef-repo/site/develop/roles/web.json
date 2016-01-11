@@ -18,6 +18,7 @@
     "recipe[nginx-conf::unicorn]",
     "recipe[nodejs]",
     "recipe[ruby-env]",
-    "recipe[imagemagick]"
+    "recipe[imagemagick]",
+    "recipe[rails]"
   ]
 }
