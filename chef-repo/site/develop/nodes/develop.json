@@ -1,5 +1,11 @@
 {
   "environment": "local-development",
+  "default_attributes": {
+    "nginx-conf": {
+      "vhost": "youtube",
+      "app_root": "/home/vagrant/projects/unicorn_sample/"
+    }
+  },
   "run_list": [
     "role[base]",
     "role[web]",
