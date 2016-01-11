@@ -16,5 +16,7 @@ template "vhost.conf" do
   notifies :reload, 'service[nginx]'
 end
 
-nginx_site 'default', false
-#nginx_site "#{node['nginx-conf']['vhost']}.conf"
+nginx_site 'default' do
+  enable false
+end
+nginx_site "#{node['nginx-conf']['vhost']}.conf"
