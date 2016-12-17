@@ -2,7 +2,7 @@
 # Cookbook Name:: rails
 # Recipe:: default
 #
-# Copyright 2015, YOUR_COMPANY_NAME
+# Copyright 2015, OpenWorks
 #
 # All rights reserved - Do Not Redistribute
 #
@@ -13,6 +13,7 @@
 #  end
 #end
 
+#アプリケーションディレクトリを作成する。
 bash 'mk_app_root' do
   code <<-EOH
     mkdir -p #{::File.join('home', node['user'], node['rails']['app_dir'])}
@@ -28,6 +29,7 @@ template "/etc/profile.d/rbenv.sh" do
   mode  '0644'
 end
 
+#railsインストールのGemファイル作成
 template 'rails_Gemfile' do
   path ::File.join('/home', node['user'], node['rails']['app_dir'], "Gemfile")
   source 'rails_Gemfile.erb'
@@ -36,6 +38,7 @@ template 'rails_Gemfile' do
   mode  '0644'
 end
 
+#railsインストール
 bash 'rails_bndler_install' do
   cwd ::File.join('home', node['user'], node['rails']['app_dir'])
   code <<-EOH
@@ -46,6 +49,7 @@ bash 'rails_bndler_install' do
   not_if { ::File.exists?(::File.join('/home', node['user'], node['rails']['app_dir'], "app")) }
 end
 
+#app用のGemファイル作成
 template 'app_Gemfile' do
   path ::File.join('/home', node['user'], node['rails']['app_dir'], "Gemfile")
   source 'app_Gemfile.erb'
@@ -54,6 +58,7 @@ template 'app_Gemfile' do
   mode  '0644'
 end
 
+#rails app Gemインストール
 bash 'rails_app_create' do
   cwd ::File.join('/home', node['user'], node['rails']['app_dir'])
   code <<-EOH
@@ -61,3 +66,14 @@ bash 'rails_app_create' do
     bundle install --path vendor/bundle
     EOH
 end
+
+#unicorn 設定ファイル作成
+template 'unicorn_config' do
+  path ::File.join('/home', node['user'], node['rails']['app_dir'],"config", "unicorn.rb")
+  source 'unicorn.rb.erb'
+  owner node['user']
+  group node['user']
+  mode  '0644'
+end
+
+

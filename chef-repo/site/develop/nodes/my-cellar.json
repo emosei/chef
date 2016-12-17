@@ -2,10 +2,10 @@
   "environment": "local-development",
   "default_attributes": {
     "nginx-conf": {
-      "vhost": "youtube"
+      "vhost": "my-cellar"
     },
     "rails": {
-      "app_dir": "/projects/app1/"
+      "app_dir": "/projects/app2/"
     }
   },
   "run_list": [
@@ -14,6 +14,7 @@
     "role[web]",
     "role[db]",
     "role[cache]",
-    "role[app]"
+    "role[app]",
+    "recipe[node_dump]"
   ]
 }

@@ -8,7 +8,7 @@ server {
   listen    80 default_server;
   server_name _;
 
-  root  <%= File.join('/home', node['user'], 'projects/unicorn_sample', 'public') %>;
+  root  <%= File.join('/home', node['user'], node['rails']['app_dir'], 'public') %>;
 
   error_page 404  /404.html;
   error_page 500 502 503 504 /50x.html;

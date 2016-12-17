@@ -5,6 +5,6 @@
 bundle exec knife cookbook create <cookbook_name> -o site-cookbooks
 
 適用
-bundle exec knife solo prepare develop : alt) sh ./prepare.sh
-bundle exec knife solo cook develop : alt) sh ./cook.sh
+bundle exec knife solo prepare develop : alt) sh ./prepare.sh develop
+bundle exec knife solo cook develop : alt) sh ./cook.sh develop
 

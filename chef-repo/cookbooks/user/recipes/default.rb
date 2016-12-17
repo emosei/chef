@@ -13,8 +13,10 @@ end
 
 user node["user"] do
   comment  "#{node["user"]} user"
-  group    node["user"]
+  password node["passwd"]
+  group node["user"]
   home     "/home/#{node["user"]}"
   supports :manage_home => true
   action   [:create, :manage]
 end
+
