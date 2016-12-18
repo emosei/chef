@@ -16,9 +16,21 @@
 #アプリケーションディレクトリを作成する。
 bash 'mk_app_root' do
   code <<-EOH
-    mkdir -p #{::File.join('home', node['user'], node['rails']['app_dir'])}
+    mkdir -p #{::File.join('home', node['user'], node['rails']['project_dir'], node['rails']['app_dir'])}
     EOH
-  not_if { ::File.exists?(::File.join('/home', node['user'], node['rails']['app_dir'])) }
+  not_if { ::File.exists?(::File.join('/home', node['user'], node['rails']['project_dir'], node['rails']['app_dir'])) }
+end
+
+bash 'chown_app_user' do
+  code <<-EOH
+    chown -R #{node['user']}:#{node['user']} #{node['rails']['project_dir']}
+    EOH
+end
+
+bash 'chmod_app_dir' do
+  code <<-EOH
+    chmod -R 755 #{node['user']}:#{node['user']} #{node['rails']['project_dir']}
+    EOH
 end
 
 template "/etc/profile.d/rbenv.sh" do
@@ -31,7 +43,7 @@ end
 
 #railsインストールのGemファイル作成
 template 'rails_Gemfile' do
-  path ::File.join('/home', node['user'], node['rails']['app_dir'], "Gemfile")
+  path ::File.join('/home', node['user'], node['rails']['project_dir'], node['rails']['app_dir'], "Gemfile")
   source 'rails_Gemfile.erb'
   owner node['user']
   group node['user']
@@ -40,13 +52,13 @@ end
 
 #railsインストール
 bash 'rails_bndler_install' do
-  cwd ::File.join('home', node['user'], node['rails']['app_dir'])
+  cwd ::File.join('home', node['user'], node['rails']['project_dir'], node['rails']['app_dir'])
   code <<-EOH
     source /etc/profile.d/rbenv.sh
     bundle install --path vendor/bundle
     bundle exec rails new . -f
     EOH
-  not_if { ::File.exists?(::File.join('/home', node['user'], node['rails']['app_dir'], "app")) }
+  not_if { ::File.exists?(::File.join('/home', node['user'], node['rails']['project_dir'], node['rails']['app_dir'])) }
 end
 
 #app用のGemファイル作成
