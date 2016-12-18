@@ -1,0 +1,15 @@
+{
+  "name":        "local-development",
+  "description": "local virtual machine development environment",
+  "chef_type":   "environment",
+  "json_class":  "Chef::Environment",
+  "default_attributes": {
+    "user": "rails",
+    "passwd": "$1$eOp2BM5.$urYX1x2boIKQl9DZ4DDfo0",
+    "ruby-env": {
+      "user":    "rails",
+      "group":   "rails"
+    }
+  },
+  "override_attributes": {}
+}

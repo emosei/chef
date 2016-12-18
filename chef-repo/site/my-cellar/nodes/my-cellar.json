@@ -1,0 +1,25 @@
+{
+  "name": "my-cellar",
+  "chef_type" : "node", 
+  "json_class": "Chef::Node",
+  "chef_environment": "local-development",
+  "run_list": [
+    "recipe[user]",
+    "role[base]",
+    "role[web]",
+    "role[db]",
+    "role[cache]",
+    "role[app]"
+  ],
+  "default": {
+    "rails": {
+      "app_dir": "/projects/app4/"
+    }
+  },
+  "normal": {
+  },
+  "override": {
+  },
+  "automatic": {
+  }
+}
