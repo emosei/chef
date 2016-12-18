@@ -9,7 +9,9 @@
       "ruby-build_url": "https://github.com/sstephenson/ruby-build"
     },
     "rails": {
-      "app_dir": "/projects/mycellar/"
+      "project_dir": "projects",
+      "app_dir": "mycellar",
+      "env" : "development"
     }
   },
   "run_list": [
@@ -17,6 +19,7 @@
     "recipe[nodejs]",
     "recipe[ruby-env]",
     "recipe[imagemagick]",
-    "recipe[rails]"
+    "recipe[rails]",
+    "recipe[unicorn_up]"
   ]
 }

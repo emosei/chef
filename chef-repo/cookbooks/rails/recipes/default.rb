@@ -23,13 +23,13 @@ end
 
 bash 'chown_app_user' do
   code <<-EOH
-    chown -R #{node['user']}:#{node['user']} #{node['rails']['project_dir']}
+    chown -R #{node['user']}:#{node['user']} #{::File.join('home', node['user'], node['rails']['project_dir'], node['rails']['app_dir'])}
     EOH
 end
 
 bash 'chmod_app_dir' do
   code <<-EOH
-    chmod -R 755 #{node['user']}:#{node['user']} #{node['rails']['project_dir']}
+    chmod -R 755 #{::File.join('home', node['user'], node['rails']['project_dir'], node['rails']['app_dir'])}
     EOH
 end
 
@@ -58,12 +58,12 @@ bash 'rails_bndler_install' do
     bundle install --path vendor/bundle
     bundle exec rails new . -f
     EOH
-  not_if { ::File.exists?(::File.join('/home', node['user'], node['rails']['project_dir'], node['rails']['app_dir'])) }
+  not_if { ::File.exists?(::File.join('/home', node['user'], node['rails']['project_dir'], node['rails']['app_dir'], 'app')) }
 end
 
 #app用のGemファイル作成
 template 'app_Gemfile' do
-  path ::File.join('/home', node['user'], node['rails']['app_dir'], "Gemfile")
+  path ::File.join('/home', node['user'], node['rails']['project_dir'], node['rails']['app_dir'], "Gemfile")
   source 'app_Gemfile.erb'
   owner node['user']
   group node['user']
@@ -72,7 +72,7 @@ end
 
 #rails app Gemインストール
 bash 'rails_app_create' do
-  cwd ::File.join('/home', node['user'], node['rails']['app_dir'])
+  cwd ::File.join('/home', node['user'], node['rails']['project_dir'], node['rails']['app_dir'])
   code <<-EOH
     source /etc/profile.d/rbenv.sh
     bundle install --path vendor/bundle
@@ -81,7 +81,7 @@ end
 
 #unicorn 設定ファイル作成
 template 'unicorn_config' do
-  path ::File.join('/home', node['user'], node['rails']['app_dir'],"config", "unicorn.rb")
+  path ::File.join('/home', node['user'], node['rails']['project_dir'], node['rails']['app_dir'],"config", "unicorn.rb")
   source 'unicorn.rb.erb'
   owner node['user']
   group node['user']
