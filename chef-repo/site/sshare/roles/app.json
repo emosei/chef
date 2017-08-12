@@ -1,0 +1,26 @@
+{
+  "name": "app",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+    "unicorn-run-user": "vagrant",
+    "ruby-env": {
+      "version": "2.3.4",
+      "rbenv_url":      "https://github.com/sstephenson/rbenv",
+      "ruby-build_url": "https://github.com/sstephenson/ruby-build"
+    },
+    "rails": {
+      "project_dir": "projects",
+      "app_dir": "sshare",
+      "env" : "development"
+    }
+  },
+  "run_list": [
+    "recipe[yum-epel]",
+    "recipe[nodejs]",
+    "recipe[ruby-env]",
+    "recipe[imagemagick]",
+    "recipe[rails]",
+    "recipe[unicorn_up]"
+  ]
+}

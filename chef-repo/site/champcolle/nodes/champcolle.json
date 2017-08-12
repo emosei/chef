@@ -1,0 +1,21 @@
+{
+  "name": "champcolle",
+  "chef_type" : "node", 
+  "environment": "local-development",
+  "run_list": [
+    "recipe[user]",
+    "role[base]",
+    "role[web]",
+    "role[db]",
+    "role[cache]",
+    "role[app]"
+  ],
+  "default":{
+  },
+  "normal": {
+  },
+  "override": {
+  },
+  "automatic": {
+  }
+}

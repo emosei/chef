@@ -1,0 +1,10 @@
+====================
+コマンド
+===================
+新たなcookbook
+bundle exec knife cookbook create <cookbook_name> -o site-cookbooks
+
+適用
+bundle exec knife solo prepare champcolle : alt) sh ./prepare.sh champcolle
+bundle exec knife solo cook champcolle : alt) sh ./cook.sh champcolle
+

@@ -23,7 +23,13 @@ end
 
 bash 'chown_app_user' do
   code <<-EOH
-    chown -R #{node['user']}:#{node['user']} #{::File.join('home', node['user'], node['rails']['project_dir'], node['rails']['app_dir'])}
+    chown -R #{node['user']}:#{node['user']} #{::File.join('home', node['user'], node['rails']['project_dir'])}
+    EOH
+end
+
+bash 'chmod_user_dir' do
+  code <<-EOH
+    chmod -R 705 #{::File.join('home', node['user'])}
     EOH
 end
 
@@ -88,4 +94,14 @@ template 'unicorn_config' do
   mode  '0644'
 end
 
+bash 'chown_app_user' do
+  code <<-EOH
+    chown -R #{node['user']}:#{node['user']} #{::File.join('home', node['user'], node['rails']['project_dir'])}
+    EOH
+end
 
+bash 'chmod_app_dir' do
+  code <<-EOH
+    chmod -R 755 #{::File.join('home', node['user'], node['rails']['project_dir'], node['rails']['app_dir'])}
+    EOH
+end

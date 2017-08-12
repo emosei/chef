@@ -16,7 +16,7 @@ stderr_path File.expand_path('../../log/unicorn_stderr.log', __FILE__)
 stdout_path File.expand_path('../../log/unicorn_stdout.log', __FILE__)
 
 #listen
-listen '/tmp/unicorn.sock'
+listen File.expand_path('../../tmp/unicorn.sock', __FILE__)
 
 # プロセスの停止などに必要なPIDファイルの保存先を指定。
 pid File.expand_path('../../tmp/pids/unicorn.pid', __FILE__)

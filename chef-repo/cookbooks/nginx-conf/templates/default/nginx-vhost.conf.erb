@@ -1,6 +1,6 @@
 <% if node['nginx']['env'].include?('ruby') %>
 upstream unicorn {
-  server unix:/tmp/unicorn.sock;
+server unix:<%= File.join('/home', node['user'], node['rails']['project_dir'], node['rails']['app_dir'], 'tmp', 'unicorn.sock') %>;
 }
 <% end %>
 

@@ -9,7 +9,7 @@
 # タイムゾーン変更
 execute "change-server-localtime" do
   user "root"
-  command "cp -p /usr/share/zoneinfo/UTC /etc/localtime"
+  command "sudo ln -s -f /usr/share/zoneinfo/UTC /etc/localtime"
   action :run
 end
 
