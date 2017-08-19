@@ -12,7 +12,7 @@ APP_ROOT_DIR="<%= ::File.join('/home', node['user'], node['rails']['project_dir'
 PID="$APP_ROOT_DIR/tmp/pids/unicorn.pid"
 CONF="$APP_ROOT_DIR/config/unicorn.rb"
 ENVIROMENT=<%= node['rails']['env'] %>
-USER=<%= node['user'] %>
+USER=<%= node['unicorn-run-user'] %>
  
 start()
 {

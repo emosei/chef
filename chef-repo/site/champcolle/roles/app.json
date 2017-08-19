@@ -3,6 +3,7 @@
   "chef_type": "role",
   "json_class": "Chef::Role",
   "default_attributes": {
+    "unicorn-run-user": "vagrant",
     "ruby-env": {
       "version": "2.4.1",
       "rbenv_url":      "https://github.com/sstephenson/rbenv",
