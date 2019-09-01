@@ -1,0 +1,21 @@
+current directory: /home/emosei/work/chef/vendor/bundle/ruby/2.4.0/gems/hitimes-1.3.1/ext/hitimes/c
+/home/emosei/.rbenv/versions/2.4.2/bin/ruby -r ./siteconf20190831-11961-1wgfvr0.rb extconf.rb
+checking for clock_gettime() in -lrt... yes
+creating Makefile
+
+current directory: /home/emosei/work/chef/vendor/bundle/ruby/2.4.0/gems/hitimes-1.3.1/ext/hitimes/c
+make "DESTDIR=" clean
+
+current directory: /home/emosei/work/chef/vendor/bundle/ruby/2.4.0/gems/hitimes-1.3.1/ext/hitimes/c
+make "DESTDIR="
+compiling hitimes.c
+compiling hitimes_instant_clock_gettime.c
+compiling hitimes_instant_osx.c
+compiling hitimes_instant_windows.c
+compiling hitimes_interval.c
+compiling hitimes_stats.c
+linking shared-object hitimes/2.4/hitimes.so
+
+current directory: /home/emosei/work/chef/vendor/bundle/ruby/2.4.0/gems/hitimes-1.3.1/ext/hitimes/c
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 hitimes.so ./.gem.20190831-11961-rvwbnh/hitimes/2.4

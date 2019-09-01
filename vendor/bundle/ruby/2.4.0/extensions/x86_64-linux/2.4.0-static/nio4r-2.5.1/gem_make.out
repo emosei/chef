@@ -1,0 +1,123 @@
+current directory: /home/emosei/work/chef/vendor/bundle/ruby/2.4.0/gems/nio4r-2.5.1/ext/nio4r
+/home/emosei/.rbenv/versions/2.4.2/bin/ruby -r ./siteconf20190831-11961-99l0oo.rb extconf.rb
+checking for unistd.h... yes
+checking for sys/select.h... yes
+checking for port_event_t in poll.h... no
+checking for sys/epoll.h... yes
+checking for sys/event.h... no
+checking for port_event_t in port.h... no
+checking for sys/resource.h... yes
+creating Makefile
+
+current directory: /home/emosei/work/chef/vendor/bundle/ruby/2.4.0/gems/nio4r-2.5.1/ext/nio4r
+make "DESTDIR=" clean
+
+current directory: /home/emosei/work/chef/vendor/bundle/ruby/2.4.0/gems/nio4r-2.5.1/ext/nio4r
+make "DESTDIR="
+compiling bytebuffer.c
+compiling monitor.c
+compiling nio4r_ext.c
+nio4r_ext.c:7 から include されたファイル中:
+../libev/ev.c:519:48: 警告: コメント内に "/*" があります
+In file included from nio4r_ext.c:7:
+../libev/ev.c: In function ‘ecb_binary32_to_binary16’:
+../libev/ev.c:1310: 警告: 符合付きと符合無しの整数式同士の比較です
+In file included from nio4r_ext.c:7:
+../libev/ev.c: トップレベル:
+../libev/ev.c:1875: 警告: ‘ev_default_loop_ptr’ initialized and declared ‘extern’
+../libev/ev.c: In function ‘array_nextsize’:
+../libev/ev.c:1986: 警告: 符合付きと符合無しの整数式同士の比較です
+In file included from ../libev/ev.c:2750,
+                 from nio4r_ext.c:7:
+../libev/ev_epoll.c: In function ‘epoll_modify’:
+../libev/ev_epoll.c:134: 警告: カンマ演算子の左側の式に効力がありません
+In file included from ../libev/ev.c:2753,
+                 from nio4r_ext.c:7:
+../libev/ev_linuxaio.c: In function ‘linuxaio_modify’:
+../libev/ev_linuxaio.c:289: 警告: ISO C90 forbids mixed declarations and code
+../libev/ev_linuxaio.c:304: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev_linuxaio.c: In function ‘linuxaio_parse_events’:
+../libev/ev_linuxaio.c:344: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev_linuxaio.c: In function ‘linuxaio_poll’:
+../libev/ev_linuxaio.c:553: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev_linuxaio.c: In function ‘linuxaio_init’:
+../libev/ev_linuxaio.c:592: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev_linuxaio.c:592: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev_linuxaio.c:592: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev_linuxaio.c:592: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev_linuxaio.c:592: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev_linuxaio.c:592: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev_linuxaio.c:592: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev_linuxaio.c:592: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev_linuxaio.c:592: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev_linuxaio.c: In function ‘linuxaio_fork’:
+../libev/ev_linuxaio.c:636: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev_linuxaio.c:636: 警告: カンマ演算子の左側の式に効力がありません
+In file included from ../libev/ev.c:2756,
+                 from nio4r_ext.c:7:
+../libev/ev_poll.c: In function ‘poll_poll’:
+../libev/ev_poll.c:113: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev_poll.c:121: 警告: カンマ演算子の左側の式に効力がありません
+In file included from nio4r_ext.c:7:
+../libev/ev.c: In function ‘verify_watcher’:
+../libev/ev.c:3185: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c:3188: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘verify_heap’:
+../libev/ev.c:3199: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c:3200: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c:3201: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘array_verify’:
+../libev/ev.c:3213: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘ev_verify’:
+../libev/ev.c:3231: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c:3244: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c:3248: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c:3249: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘timers_reify’:
+../libev/ev.c:3435: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘periodics_reify’:
+../libev/ev.c:3498: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘ev_backend_poll’:
+../libev/ev.c:3644: 警告: no return statement in function returning non-void
+../libev/ev.c: In function ‘ev_run’:
+../libev/ev.c:3658: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c:3814: 警告: passing argument 1 of ‘rb_thread_call_without_gvl’ from incompatible pointer type
+/home/emosei/.rbenv/versions/2.4.2/include/ruby-2.4.0/ruby/thread.h:28: note: expected ‘void * (*)(void *)’ but argument is of type ‘VALUE (*)(void *)’
+../libev/ev.c:3826: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘ev_io_start’:
+../libev/ev.c:4001: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c:4002: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c:4014: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘ev_io_stop’:
+../libev/ev.c:4030: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘ev_timer_start’:
+../libev/ev.c:4054: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘ev_timer_stop’:
+../libev/ev.c:4083: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘ev_periodic_start’:
+../libev/ev.c:4147: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘ev_periodic_stop’:
+../libev/ev.c:4180: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘ev_signal_start’:
+../libev/ev.c:4219: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c:4222: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘ev_child_start’:
+../libev/ev.c:4341: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c: In function ‘ev_embed_start’:
+../libev/ev.c:4926: 警告: カンマ演算子の左側の式に効力がありません
+../libev/ev.c:5270:27: 警告: コメント内に "/*" があります
+../libev/ev.c:5271:27: 警告: コメント内に "/*" があります
+nio4r_ext.c: In function ‘Init_nio4r_ext’:
+nio4r_ext.c:15: 警告: passing argument 1 of ‘ev_set_allocator’ from incompatible pointer type
+../libev/ev.c:1777: note: expected ‘void * (*)(void *, long int)’ but argument is of type ‘void * (*)(void *, size_t)’
+トップレベル:
+cc1: 警告: unrecognized command line option "-Wno-self-assign"
+cc1: 警告: unrecognized command line option "-Wno-constant-logical-operand"
+cc1: 警告: unrecognized command line option "-Wno-parentheses-equality"
+cc1: 警告: unrecognized command line option "-Wno-tautological-compare"
+compiling selector.c
+linking shared-object nio4r_ext.so
+
+current directory: /home/emosei/work/chef/vendor/bundle/ruby/2.4.0/gems/nio4r-2.5.1/ext/nio4r
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 nio4r_ext.so ./.gem.20190831-11961-1mui8h3

@@ -1,0 +1,19 @@
+current directory: /home/emosei/work/chef/vendor/bundle/ruby/2.4.0/gems/libyajl2-1.2.0/ext/libyajl2
+/home/emosei/.rbenv/versions/2.4.2/bin/ruby -r ./siteconf20190831-12242-1c921rn.rb extconf.rb
+creating Makefile
+/home/emosei/work/chef/vendor/bundle/ruby/2.4.0/gems/libyajl2-1.2.0/ext/libyajl2
+
+current directory: /home/emosei/work/chef/vendor/bundle/ruby/2.4.0/gems/libyajl2-1.2.0/ext/libyajl2
+make "DESTDIR=" clean
+make: *** ターゲット `clean' を make するルールがありません.  中止.
+
+current directory: /home/emosei/work/chef/vendor/bundle/ruby/2.4.0/gems/libyajl2-1.2.0/ext/libyajl2
+make "DESTDIR="
+make: `all' に対して行うべき事はありません.
+
+current directory: /home/emosei/work/chef/vendor/bundle/ruby/2.4.0/gems/libyajl2-1.2.0/ext/libyajl2
+make "DESTDIR=" install
+mkdir -p /home/emosei/work/chef/vendor/bundle/ruby/2.4.0/gems/libyajl2-1.2.0/lib/libyajl2/vendored-libyajl2/lib
+cp libyajl.so /home/emosei/work/chef/vendor/bundle/ruby/2.4.0/gems/libyajl2-1.2.0/lib/libyajl2/vendored-libyajl2/lib/libyajl.so
+mkdir -p /home/emosei/work/chef/vendor/bundle/ruby/2.4.0/gems/libyajl2-1.2.0/lib/libyajl2/vendored-libyajl2/include/yajl
+cp yajl/*.h /home/emosei/work/chef/vendor/bundle/ruby/2.4.0/gems/libyajl2-1.2.0/lib/libyajl2/vendored-libyajl2/include/yajl

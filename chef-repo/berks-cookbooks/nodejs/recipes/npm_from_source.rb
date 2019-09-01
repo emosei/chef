@@ -1,9 +1,9 @@
 #
 # Author:: Marius Ducea (marius@promethost.com)
-# Cookbook Name:: nodejs
+# Cookbook:: nodejs
 # Recipe:: npm
 #
-# Copyright 2010-2012, Promet Solutions
+# Copyright:: 2010-2017, Promet Solutions
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,9 +20,7 @@
 
 Chef::Recipe.send(:include, NodeJs::Helper)
 
-node.force_override['nodejs']['npm']['install_method'] = 'source' # ~FC019
-
-include_recipe 'nodejs::install'
+include_recipe 'nodejs::nodejs_from_source'
 
 dist = npm_dist
 

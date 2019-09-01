@@ -25,4 +25,11 @@ default_action :create
 attribute :source_name, :kind_of => String, :name_attribute => true, :required => true
 attribute :type, :kind_of => String, :required => true
 attribute :tag, :kind_of => String
-attribute :params, :kind_of => Hash
+attribute :parameters, :kind_of => Hash, :default => {}
+
+# Workaround for backward compatibility for Chef pre-13 (#99)
+if TdAgent::Helpers.apply_params_kludge?
+  attribute :params, :default => {}
+end
+
+attribute :template_source, :kind_of => String, default: 'td-agent'

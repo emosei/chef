@@ -1,0 +1,19 @@
+current directory: /home/emosei/work/chef/vendor/bundle/ruby/2.4.0/gems/ffi-yajl-2.3.1/ext/ffi_yajl/ext/dlopen
+/home/emosei/.rbenv/versions/2.4.2/bin/ruby -r ./siteconf20190831-12242-4himlg.rb extconf.rb
+$(cflags)
+-L. -L/home/emosei/.rbenv/versions/2.4.2/lib  -fstack-protector -rdynamic -Wl,-export-dynamic
+checking for dlfcn.h... yes
+checking for dlopen() in -ldl... yes
+creating Makefile
+
+current directory: /home/emosei/work/chef/vendor/bundle/ruby/2.4.0/gems/ffi-yajl-2.3.1/ext/ffi_yajl/ext/dlopen
+make "DESTDIR=" clean
+
+current directory: /home/emosei/work/chef/vendor/bundle/ruby/2.4.0/gems/ffi-yajl-2.3.1/ext/ffi_yajl/ext/dlopen
+make "DESTDIR="
+compiling dlopen.c
+linking shared-object ffi_yajl/ext/dlopen.so
+
+current directory: /home/emosei/work/chef/vendor/bundle/ruby/2.4.0/gems/ffi-yajl-2.3.1/ext/ffi_yajl/ext/dlopen
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 dlopen.so ./.gem.20190831-12242-ulgwsv/ffi_yajl/ext

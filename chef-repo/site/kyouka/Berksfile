@@ -1,0 +1,4 @@
+source "https://api.berkshelf.com"
+
+cookbook 'libxml2', '~> 0.1.1'
+cookbook 'mysql2_chef_gem'

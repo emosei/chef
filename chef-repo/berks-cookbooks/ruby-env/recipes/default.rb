@@ -50,7 +50,10 @@ execute "rbenv install #{node['ruby-env']['version']}" do
   command "/home/#{node['ruby-env']['user']}/.rbenv/bin/rbenv install #{node['ruby-env']['version']}"
   user   node['ruby-env']['user']
   group  node['ruby-env']['group']
-  environment 'HOME' => "/home/#{node['ruby-env']['user']}"
+  environment(
+    'HOME' => "/home/#{node['ruby-env']['user']}",
+    'RUBY_BUILD_CURL_OPTS' => "--tlsv1.2"
+  )
   not_if { File.exists?("/home/#{node['ruby-env']['user']}/.rbenv/versions/#{node['ruby-env']['version']}") }
 end
 
@@ -63,7 +66,7 @@ execute "rbenv global #{node['ruby-env']['version']}" do
 end
 
 # install rbenv-rehash and bundler gem
-%w{rbenv-rehash bundler}.each do |gem_name|
+%w{rbenv-rehash}.each do |gem_name|
   execute "gem install #{gem_name}" do
     command "/home/#{node['ruby-env']['user']}/.rbenv/shims/gem install #{gem_name}"
     user   node['ruby-env']['user']
@@ -73,3 +76,11 @@ end
   end
 end
 
+# install rbenv-rehash and bundler gem
+execute "gem install bundler" do
+  command "/home/#{node['ruby-env']['user']}/.rbenv/shims/gem install bundler -v 1.10.6"
+  user   node['ruby-env']['user']
+  group  node['ruby-env']['group']
+  environment 'HOME' => "/home/#{node['ruby-env']['user']}"
+  not_if "/home/#{node['ruby-env']['user']}/.rbenv/shims/gem list | grep bundler"
+end

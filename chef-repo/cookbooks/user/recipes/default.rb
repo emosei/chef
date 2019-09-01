@@ -16,7 +16,7 @@ user node["user"] do
   password node["passwd"]
   group node["user"]
   home     "/home/#{node["user"]}"
-  supports :manage_home => true
+  manage_home true
   action   [:create, :manage]
 end
 

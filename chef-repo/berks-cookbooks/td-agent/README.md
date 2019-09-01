@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/treasure-data/chef-td-agent.svg?branch=master)](https://travis-ci.org/treasure-data/chef-td-agent)
+
 # DESCRIPTION
 
 [Chef](https://www.chef.io/chef/) cookbook for td-agent (Treasure Data Agent). The release log of td-agent is available [here](http://docs.treasure-data.com/articles/td-agent-changelog).
@@ -86,13 +88,6 @@ If `pinning_version` is true, then `version`'s td-agent will be installed. The d
 
 In this case, you should set the full version in `node[:td_agent][:version]`.
 
-### Limitation
-
-`pinning_version` and `version` attributes are now available for `rpm` packages.
-They are unsupported for `deb` packages because the td-agent repository currently
-uses `reprepro` for building deb repositories, which can not handle multiple versions
-of the same package.
-
 ## uid
 
 UID of td-agent user. Automatically assigned by default.
@@ -167,7 +162,7 @@ Notice: If you use some plugins in your sources, you should install it before yo
 | source_name | File name. To its value will be added `.conf`. Defaults to `name`  |
 | type | Type of source. This is name of input plugin. |
 | tag | Tag, what uses in fluentd routing. |
-| params | Parameters of source. Hash. | 
+| parameters | Parameters of source. Hash. |
 
 ### Example
 
@@ -177,10 +172,10 @@ This example creates the source with `tail` type and  `syslog` tag which reads f
 td_agent_source 'test_in_tail' do
   type 'tail'
   tag 'syslog'
-  params(format: 'syslog',
+  parameters(format: 'syslog',
          path: '/var/log/messages')
 end
-``` 
+```
 
 ## td_agent_match
 
@@ -202,7 +197,7 @@ Notice: Notice: If you use some plugins in your matches, you should install it b
 | match_name | File name. To its value will be added `.conf`. Defaults to `name`  |
 | type | Type of match. This is name of output plugin. |
 | tag | Tag, what uses in fluentd routing. |
-| params | Parameters of match. Hash. | 
+| parameters | Parameters of match. Hash. |
 
 ### Example
 This example creates the match with type `copy` and tag `webserver.*` which sends log data to local graylog2 server.
@@ -211,11 +206,46 @@ This example creates the match with type `copy` and tag `webserver.*` which send
 td_agent_match 'test_gelf_match' do
   type 'copy'
   tag 'webserver.*'
-  params( store: [{ type: 'gelf',
+  parameters( store: [{ type: 'gelf',
                    host: '127.0.0.1',
                    port: 12201,
                    flush_interval: '5s'},
                    { type: 'stdout' }])
+end
+```
+
+## td_agent_filter
+
+Create file with filter definition in `/etc/td-agent/conf.d` directory. It works only if `node[:td_agent][:includes]` is `true`
+
+Notice: Notice: If you use some plugins for your filters, you should install them before you call lwrp.
+
+### Actions
+
+| Action | Description |
+|----------|----------------|
+| :create | Create a filter |
+| :delete | Delete a filter |
+
+### Attributes
+
+| Attribute | Description |
+|-------------|----------------|
+| filter_name | File name. To its value will be added `.conf`. Defaults to `name`  |
+| type | Type of filter. This is name of output plugin. |
+| tag | Tag, what uses in fluentd routing. |
+| parameters | Parameters of filter. Hash. |
+
+### Example
+This example creates the filter with type `record_transformer` and tag `webserver.*` which adds the `hostname` field with the server's hostname as its value:
+
+```ruby
+td_agent_filter 'filter_webserver' do
+  type 'record_transformer'
+  tag 'webserver.*'
+  parameters(
+    record: [ { host_param: %Q|"#{Socket.gethostname}"| } ]
+  )
 end
 ```
 
@@ -286,11 +316,11 @@ override_attributes(
 
 * `node[:td_agent][:in_http][:enable_api] = true`
 
-Access to the API may be disabled by setting `enable_api` to `false`. This may be of particular use when 
+Access to the API may be disabled by setting `enable_api` to `false`. This may be of particular use when
 td-agent is being used on endpoint systems that are forwarding logs to a centralized td-agent server.
 
 # License
 
-Copyright 2014 Treasure Data, Inc.
+Copyright 2014-today Treasure Data, Inc.
 
 The code is licensed under the Apache License 2.0 (see  LICENSE for details).

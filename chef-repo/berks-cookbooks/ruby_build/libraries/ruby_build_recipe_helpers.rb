@@ -1,10 +1,10 @@
 #
-# Cookbook Name:: ruby_build
+# Cookbook:: ruby_build
 # Library:: Chef::RubyBuild::RecipeHelpers
 #
 # Author:: Fletcher Nichol <fnichol@nichol.ca>
 #
-# Copyright 2011, Fletcher Nichol
+# Copyright:: 2011-2016, Fletcher Nichol
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -24,16 +24,10 @@ class Chef
     module RecipeHelpers
       def build_upgrade_strategy(strategy)
         if strategy.nil? || strategy == false
-          "none"
+          'none'
         else
           strategy
         end
-      end
-
-      def mac_with_no_homebrew
-        node['platform'] == 'mac_os_x' &&
-          Chef::Platform.find_provider_for_node(node, :package) !=
-          Chef::Provider::Package::Homebrew
       end
     end
   end
