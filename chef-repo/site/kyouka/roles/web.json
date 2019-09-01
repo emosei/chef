@@ -16,12 +16,12 @@
       "vhost": "kyouka"
     }
   },
-  "run_list": [
+  "run_list":[
     "recipe[yum-epel]",
+    "recipe[ruby-env]",
     "recipe[nginx]",
     "recipe[nginx-conf::unicorn]",
     "recipe[nodejs]",
-    "recipe[ruby-env]",
     "recipe[imagemagick]"
   ]
 }

@@ -6,10 +6,11 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+
 # install openssl-devel and sqlite-devel
-%w{openssl-devel sqlite-devel}.each do |pkg|
+%w{ gcc gcc-c++ readline-devel openssl openssl-devel sqlite-devel nss curl libcurl bzip2 }.each do |pkg|
   package pkg do
-    action :install
+    action [ :install, :upgrade ]
   end
 end
 

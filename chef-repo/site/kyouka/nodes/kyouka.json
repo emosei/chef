@@ -1,9 +1,10 @@
 {
   "name": "kyouka",
   "chef_type" : "node", 
-  "environment": "local-development",
+  "environment": "staging",
   "run_list": [
     "recipe[user]",
+    "recipe[sudo]",
     "role[base]",
     "role[web]",
     "role[db]",
@@ -17,5 +18,11 @@
   "override": {
   },
   "automatic": {
+  },
+  "authorization": {
+    "sudo": {
+      "users": ["kyouka"],
+      "passwordless": "true"
+    }
   }
 }
