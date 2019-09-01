@@ -1,0 +1,13 @@
+[staging.kyouka]
+listen = /var/run/php-fpm/php-fpm.sock
+
+listen.owner = <%= node['nginx']['user'] %>
+listen.group = <%= node['nginx']['group'] %>
+listen.mode = 0666
+
+user = <%= node['nginx']['user'] %>
+group = <%= node['nginx']['group'] %>
+
+pm = static
+pm.max_children = 2
+pm.max_requests = 1500

@@ -13,14 +13,18 @@
       "ruby-build_url": "https://github.com/rbenv/ruby-build"
     },
     "nginx-conf": {
-      "vhost": "kyouka"
+      "vhost": "unicorn",
+      "php": "php"
+    },
+    "php": {
+      "root_dir": "www"
     }
   },
   "run_list":[
     "recipe[yum-epel]",
     "recipe[ruby-env]",
     "recipe[nginx]",
-    "recipe[nginx-conf::unicorn]",
+    "recipe[nginx-conf::php]",
     "recipe[nodejs]",
     "recipe[imagemagick]"
   ]

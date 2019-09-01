@@ -21,6 +21,7 @@
     "recipe[ruby-env]",
     "recipe[imagemagick]",
     "recipe[rails]",
-    "recipe[unicorn_up]"
+    "recipe[unicorn_up]",
+    "recipe[setup_php]"
   ]
 }
