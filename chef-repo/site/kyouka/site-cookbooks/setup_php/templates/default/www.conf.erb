@@ -11,3 +11,5 @@ group = <%= node['nginx']['group'] %>
 pm = static
 pm.max_children = 2
 pm.max_requests = 1500
+
+security.limit_extensions = .php .html
