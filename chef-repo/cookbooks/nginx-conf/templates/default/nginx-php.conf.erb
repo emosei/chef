@@ -1,0 +1,19 @@
+server {
+  index index.php index.html;
+  server_name kyouka.ow-japan.com;
+  location / {
+    root <%= File.join('/home', node['user'], node['php']['root_dir']) %>;
+    index  index.php index.html;
+  }
+
+  location ~ \.html$|\.php$ {
+    root <%= File.join('/home', node['user'], node['php']['root_dir']) %>;
+    fastcgi_pass unix:/var/run/php-fpm/php-fpm.sock;
+    fastcgi_index index.php;
+    fastcgi_param SCRIPT_FILENAME $document_root/$fastcgi_script_name;
+    include fastcgi_params;
+  }
+  location ~ /\.hta {
+    deny  all;
+  }
+}
