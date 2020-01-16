@@ -3,16 +3,16 @@
   "chef_type": "role",
   "json_class": "Chef::Role",
   "default_attributes": {
-    "unicorn-run-user": "vagrant",
+    "unicorn-run-user": "kyouka",
     "ruby-env": {
-      "version": "2.4.0",
+      "version": "2.6.5",
       "rbenv_url":      "https://github.com/rbenv/rbenv",
       "ruby-build_url": "https://github.com/rbenv/ruby-build"
     },
     "rails": {
       "project_dir": "projects",
       "app_dir": "kyouka",
-      "env" : "development"
+      "env" : "staging"
     }
   },
   "run_list": [
