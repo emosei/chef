@@ -1,0 +1,12 @@
+<IfModule mod_ssl.c>
+<VirtualHost *:443>
+  ServerName palmclub.musashikoyama-palm.com
+  DocumentRoot /home/deployer/app/palm_mobile_app/current/public
+  PassengerRuby /home/deployer/.rbenv/versions/2.4.2/bin/ruby
+  RailsEnv production
+SSLCertificateFile /etc/letsencrypt/live/palmclub.musashikoyama-palm.com/cert.pem
+SSLCertificateKeyFile /etc/letsencrypt/live/palmclub.musashikoyama-palm.com/privkey.pem
+Include /etc/letsencrypt/options-ssl-apache.conf
+SSLCertificateChainFile /etc/letsencrypt/live/palmclub.musashikoyama-palm.com/chain.pem
+</VirtualHost>
+</IfModule>

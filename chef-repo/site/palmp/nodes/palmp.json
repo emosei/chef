@@ -1,0 +1,28 @@
+{
+  "name": "palm",
+  "chef_type" : "node", 
+  "environment": "production",
+  "run_list": [
+    "recipe[user]",
+    "recipe[sudo]",
+    "role[base]",
+    "role[web]",
+    "role[db]",
+    "role[cache]",
+    "role[app]"
+  ],
+  "default":{
+  },
+  "normal": {
+  },
+  "override": {
+  },
+  "automatic": {
+  },
+  "authorization": {
+    "sudo": {
+      "users": ["deployer"],
+      "passwordless": "true"
+    }
+  }
+}

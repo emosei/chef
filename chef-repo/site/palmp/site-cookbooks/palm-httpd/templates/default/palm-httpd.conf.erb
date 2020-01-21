@@ -1,0 +1,16 @@
+<VirtualHost *:80>
+  ServerName <%= @server_name %>
+  DocumentRoot <%= @document_root %>
+  PassengerRuby /home/deployer/.rbenv/versions/2.4.2/bin/ruby
+  RailsEnv staging
+</VirtualHost>
+
+<VirtualHost *:80>
+  ServerName palmclub.musashikoyama-palm.com
+  DocumentRoot /home/deployer/app/palm_mobile_app/current/public
+  PassengerRuby /home/deployer/.rbenv/versions/2.4.2/bin/ruby
+  RailsEnv production
+RewriteEngine on
+RewriteCond %{SERVER_NAME} =palmclub.musashikoyama-palm.com
+RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [L,NE,R=permanent]
+</VirtualHost>
