@@ -6,7 +6,7 @@ Generates Ubuntu style module.load files.
 
 ./apache2_module_conf_generate.pl /usr/lib64/httpd/modules /etc/httpd/mods-available
 
-ARGV[0] is the apache modules directory, ARGV[1] is where you want them.
+ARGV[0] is the apache modules directory, ARGV[1] is where you want 'em.
 
 =cut
 
@@ -38,3 +38,4 @@ find(
 );
 
 exit 0;
+

@@ -4,4 +4,7 @@ cookbook 'libxml2', '~> 0.1.1'
 cookbook 'openssl'
 cookbook 'mysql2_chef_gem'
 cookbook 'sudo'
-cookbook 'apache2'
+cookbook 'apache2', '~> 5.2.1'
+cookbook 'passenger_apache2', '~> 3.1.0'
+cookbook 'users', '~> 5.4.0'
+

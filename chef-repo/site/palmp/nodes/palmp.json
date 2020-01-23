@@ -3,7 +3,7 @@
   "chef_type" : "node", 
   "environment": "production",
   "run_list": [
-    "recipe[user]",
+    "recipe[mkuser]",
     "recipe[sudo]",
     "role[base]",
     "role[web]",
@@ -21,7 +21,7 @@
   },
   "authorization": {
     "sudo": {
-      "users": ["deployer"],
+      "users": ["wheel"],
       "passwordless": "true"
     }
   }

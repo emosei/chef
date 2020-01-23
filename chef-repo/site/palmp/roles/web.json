@@ -7,14 +7,17 @@
       "version": "2.4.0",
       "rbenv_url":      "https://github.com/rbenv/rbenv",
       "ruby-build_url": "https://github.com/rbenv/ruby-build"
+    },
+    "apache": {
+      "listen": ["*:80", "*:443"]
     }
   },
   "run_list":[
     "recipe[yum-epel]",
     "recipe[ruby-env]",
     "recipe[nodejs]",
-    "recipe[palm-httpd]",
-    "recipe[palm-httpd::staging]",
+    "recipe[apache2]",
+    "recipe[apache2::mod_ssl]",
     "recipe[imagemagick]"
   ]
 }

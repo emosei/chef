@@ -8,3 +8,11 @@ bundle exec knife cookbook create <cookbook_name> -o site-cookbooks
 bundle exec knife solo prepare sshare : alt) sh ./prepare.sh palmp
 bundle exec knife solo cook sshare : alt) sh ./cook.sh palmp
 
+ユーザ作成
+knife data bag create users <user_name>a --secret-file .chef/data_bag_key --local
+
+ユーザ修正
+knife data bag edit users <user_name>a --secret-file .chef/data_bag_key --local
+
+ユーザ照会
+knife data bag show users <user_name>a --secret-file .chef/data_bag_key --local

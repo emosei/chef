@@ -1,12 +1,14 @@
 DEPENDENCIES
-  apache2
+  apache2 (~> 5.2.1)
   libxml2 (~> 0.1.1)
   mysql2_chef_gem
   openssl
+  passenger_apache2 (~> 3.1.0)
   sudo
+  users (~> 5.4.0)
 
 GRAPH
-  apache2 (8.0.2)
+  apache2 (5.2.1)
   apt (2.8.2)
   build-essential (8.2.1)
     mingw (>= 1.1)
@@ -24,9 +26,13 @@ GRAPH
     mariadb (>= 0.0.0)
     mysql (>= 8.2.0)
   openssl (8.5.5)
+  passenger_apache2 (3.1.0)
+    apache2 (>= 2.0)
+    build-essential (>= 5.0)
   selinux_policy (2.3.4)
   seven_zip (3.1.1)
     windows (>= 0.0.0)
   sudo (5.4.4)
+  users (5.4.0)
   windows (6.0.0)
   yum (3.8.1)

@@ -1,0 +1,11 @@
+{
+  "id": "palm",
+  "password": "$1$gwhXLafp$z1oJXMVoUMoqIxTvB8Imr0",
+  "comment": "Hello Palm!!",
+  "groups": [
+    "palm"
+  ],
+  "ssh_keys": [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAr03RXRV13Ix7o/JZ3+lD15zudcnZPgSx8O7P7F/9dZAd7220C/0EhB4MmO6/DAkVAkN8+3H2EovQFImExtqn90aGRhBNz/7DZ6K5z8PMFs3MpNAm//OlQYHWPuSBg0TKIDrl4XmJvUkLshAbh1aLHFbmEKj7KP3zkofVJD/MHOM9CF3/97Fa3fT0k9HgC2/7qWkSo4B32rxoj4N2/dJzYOQWJLl88nFXxCClDP/OvJkI4OVv8cCQtE8kU4f4GeFfGSrSwtdkDAS3d6qSAmofiR04RRv97yMgBB/kyyEXZOCURn/DKzipUTZ1GXS38H4uFWKuGQ+DKoEdNEdkLk2a4w== emosei@www3067uj.sakura.ne.jp"
+  ]
+}
