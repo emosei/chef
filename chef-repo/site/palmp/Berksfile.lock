@@ -4,6 +4,7 @@ DEPENDENCIES
   mysql2_chef_gem
   openssl
   passenger_apache2 (~> 3.1.0)
+  ruby_rbenv (~> 2.3.1)
   sudo
   users (~> 5.4.0)
 
@@ -29,6 +30,7 @@ GRAPH
   passenger_apache2 (3.1.0)
     apache2 (>= 2.0)
     build-essential (>= 5.0)
+  ruby_rbenv (2.3.1)
   selinux_policy (2.3.4)
   seven_zip (3.1.1)
     windows (>= 0.0.0)

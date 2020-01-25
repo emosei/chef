@@ -1,5 +1,6 @@
 source "https://api.berkshelf.com"
 
+cookbook 'ruby_rbenv', '~> 2.3.1'
 cookbook 'libxml2', '~> 0.1.1'
 cookbook 'openssl'
 cookbook 'mysql2_chef_gem'

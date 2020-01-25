@@ -4,11 +4,9 @@
   "chef_type":   "environment",
   "json_class":  "Chef::Environment",
   "default_attributes": {
-    "user": "deployer",
-    "passwd": "$1$EYiTBP.C$9m9AQ0yJMIshA1nKFVeiJ1",
     "ruby-env": {
-      "user":    "deployer",
-      "group":   "deployer"
+      "user":    "root",
+      "group":   "root"
     }
   },
   "override_attributes": {}
