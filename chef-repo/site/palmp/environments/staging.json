@@ -1,0 +1,15 @@
+{
+  "name":        "staging",
+  "description": "staging environment",
+  "chef_type":   "environment",
+  "json_class":  "Chef::Environment",
+  "default_attributes": {
+    "palm_httpd": {
+      "servername": "palmblubtest.musashikoyama-palm.com",
+      "docroot": "/var/www/app/palm_mobile_app_staging/current/public",
+      "app_name": "palm_staging",
+      "rails_env": "staging"
+    }
+  },
+  "override_attributes": {}
+}

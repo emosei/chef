@@ -2,6 +2,15 @@
   "name": "base",
   "chef_type": "role",
   "json_class": "Chef::Role",
+  "default_attributes": {
+    "ruby-env": {
+      "version": "2.4.0",
+      "rbenv_url":      "https://github.com/rbenv/rbenv",
+      "ruby-build_url": "https://github.com/rbenv/ruby-build",
+      "user":    "root",
+      "group":   "root"
+    }
+  },
   "run_list": [
     "recipe[selinux::disabled]",
     "recipe[git]",

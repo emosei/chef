@@ -1,7 +1,7 @@
 {
   "name": "palm",
   "chef_type" : "node", 
-  "environment": "production",
+  "environment": "staging",
   "default_attributes": {
     "ruby-env": {
       "version": "2.4.0",

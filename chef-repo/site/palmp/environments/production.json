@@ -4,9 +4,11 @@
   "chef_type":   "environment",
   "json_class":  "Chef::Environment",
   "default_attributes": {
-    "ruby-env": {
-      "user":    "root",
-      "group":   "root"
+    "palm_httpd": {
+      "servername": "palmclub.musashikoyama-palm.com",
+      "docroot": "/var/www/app/palm_mobile_app/current/public",
+      "app_name": "palm",
+      "rails_env": "production"
     }
   },
   "override_attributes": {}

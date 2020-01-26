@@ -18,5 +18,5 @@ knife data bag edit users <user_name>a --secret-file .chef/data_bag_key --local
 knife data bag show users <user_name>a --secret-file .chef/data_bag_key --local
 
 証明書送信
-ssh-copy-id -i ~/.ssh/palm/id_rsa.pub root@153.127.10.9
+sed -i -e '$d' ~/.ssh/known_hosts && ssh-copy-id -i ~/.ssh/palm/id_rsa.pub root@153.127.10.9
 XDAUFf7U9x7M
